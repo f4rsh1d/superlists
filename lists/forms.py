@@ -7,6 +7,7 @@ DUPLICATE_ITEM_ERROR = "You've already got this in your list"
 
 
 class ItemForm(forms.models.ModelForm):
+
     class Meta:
         model = Item
         fields = ('text',)
@@ -26,7 +27,9 @@ class ItemForm(forms.models.ModelForm):
 
 
 class ExistingListItemForm(ItemForm):
+
     def __init__(self, for_list, *args, **kwargs):
+
         super().__init__(*args, **kwargs)
         self.instance.list = for_list
 
