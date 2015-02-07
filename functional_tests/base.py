@@ -14,7 +14,7 @@ class FunctionalTest(StaticLiveServerTestCase):
                 cls.server_host = arg.split('=')[1]
                 cls.server_url = 'http://' + cls.server_host
                 cls.against_staging = True
-            return
+                return
         super().setUpClass()
         cls.against_staging = False
         cls.server_url = cls.live_server_url
